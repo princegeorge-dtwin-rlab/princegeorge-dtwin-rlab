@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An open engineering research journal documenting chemical engineering, process modelling, industrial digital twins and experiments.">
+  <title>Engineering Research Journal | Digital Twin & Computational Engineering</title>
+  <style>
+    :root{--navy:#102537;--navy2:#17374b;--teal:#116e6a;--teal-light:#dcf3ed;--gold:#b47928;--ink:#19313e;--muted:#5e7280;--bg:#f5f8f7;--line:#dbe6e4;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit} a:focus-visible{outline:3px solid #dbac59;outline-offset:4px}
+    .container{max-width:1120px;margin:auto;padding:0 26px}
+    .site-header{background:var(--navy);color:white;border-bottom:1px solid rgba(255,255,255,.11)}
+    .nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+    .brand{font-weight:750;text-decoration:none;letter-spacing:-.5px;font-size:1.09rem;line-height:1.2}.brand span{display:block;color:#9cdcd0;font-weight:550;letter-spacing:1.4px;text-transform:uppercase;font-size:.66rem;margin-top:5px}
+    nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px} nav a{text-decoration:none;font-size:.87rem;color:#d4e6eb} nav a:hover{color:#fff}
+    .hero{background:radial-gradient(circle at 83% 18%,#1b5961 0%,transparent 35%),linear-gradient(130deg,#102537 10%,#184454 100%);color:white;padding:86px 0 98px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+    .eyebrow{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:#9cd9ca}
+    h1{font-size:clamp(2.35rem,5vw,4.35rem);line-height:1.1;letter-spacing:-2px;margin:18px 0 25px;font-weight:780}
+    h1 em{font-style:normal;color:#a1e2d4}.hero p{color:#d8e6e9;max-width:620px;font-size:1.09rem;line-height:1.8}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:33px}.btn{display:inline-block;text-decoration:none;padding:12px 19px;border-radius:8px;font-size:.91rem;font-weight:700;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:#b9e8d9;color:#0f3f3c}.btn-secondary{border:1px solid #7897a1;color:#f2f8f9}
+    .hero-diagram{border:1px solid rgba(192,230,228,.22);border-radius:18px;background:rgba(255,255,255,.04);padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+    .diagram-kicker{text-transform:uppercase;letter-spacing:1.4px;color:#b2d0d0;font-size:.7rem;font-weight:700}.diagram-title{font-size:1.1rem;font-weight:700;margin:4px 0 15px}.diagram-foot{border-top:1px solid rgba(255,255,255,.14);padding-top:12px;color:#c6dadd;font-size:.78rem}
+    main section{padding:78px 0}.section-head{max-width:735px;margin-bottom:30px}.section-label{color:var(--teal);font-size:.73rem;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
+    h2{font-size:clamp(1.9rem,3.5vw,2.65rem);line-height:1.2;letter-spacing:-1px;margin:9px 0 16px}.section-head p,.lead{color:var(--muted);font-size:1.05rem;line-height:1.85}
+    .about-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:25px;align-items:start}
+    .panel,.card{border:1px solid var(--line);border-radius:14px;background:white;padding:29px;box-shadow:0 6px 24px rgba(16,37,55,.035)}
+    .panel p{margin-top:0;color:#455f6c}.panel p:last-child{margin-bottom:0}
+    .snapshot{background:#e7f3f0;border:1px solid #cce5df}.snapshot strong{display:block;margin-bottom:12px}.snapshot ul{padding-left:20px;margin:0;font-size:.91rem;line-height:1.95;color:#3c5865}
+    .stripe{background:#ecf2f1;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{display:flex;flex-direction:column;gap:12px}.pill{display:inline-block;width:fit-content;color:#176b61;background:#e5f5f0;border-radius:999px;font-weight:750;font-size:.69rem;letter-spacing:.45px;padding:5px 11px;text-transform:uppercase}.pill.gray{color:#5b6c72;background:#eaf0f2}
+    h3{font-size:1.2rem;line-height:1.35;margin:2px 0;color:#193340}.card p{color:#59717b;margin:0;flex:1;font-size:.93rem}
+    .small-link{text-decoration:none;color:var(--teal);font-size:.87rem;font-weight:750;align-self:start}.small-link:hover{text-decoration:underline}
+    .theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.theme{border-left:4px solid #348a7e;padding:10px 22px;background:white;border-radius:0 9px 9px 0}.theme strong{display:block}.theme span{color:var(--muted);font-size:.89rem}
+    .journal-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.journal-entry{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}.journal-entry:last-child{border:none;margin-bottom:0;padding-bottom:0}.journal-entry h3{margin:6px 0}.journal-entry p{margin:3px 0;color:var(--muted);font-size:.9rem}.note{border-radius:14px;background:var(--navy);color:white;padding:29px}.note p{color:#cfe2e4}.note ol{padding-left:21px;line-height:2;color:#e2f0f0}
+    .contact{background:#e2efec;border-top:1px solid #c9e0db}.contact-box{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}.contact-box p{color:#536f77;max-width:650px}
+    footer{background:var(--navy);color:#b8cdd2;padding:29px 0;font-size:.85rem} footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.hero-grid,.about-grid,.journal-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.hero{padding:62px 0}.hero-diagram{max-width:550px}h1{letter-spacing:-1px}}
+    @media(max-width:550px){.container{padding:0 19px}.cards,.theme-grid{grid-template-columns:1fr}.nav{justify-content:center;text-align:center}nav{justify-content:center;gap:10px 17px}.hero{padding:52px 0 60px}main section{padding:55px 0}h1{font-size:2.35rem}}
+  </style>
+</head>
+<body>
+  <!-- STEP-BY-STEP NOTE: This is your starter homepage. Later, edit the text directly in GitHub. -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">Engineering Research Journal<span>Digital Twin & Computational Engineering</span></a>
+      <nav aria-label="Main menu">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#portfolio">Portfolio</a><a href="#journal">Journal</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Research in progress · Engineering in practice</div>
+        <h1>From physical processes to <em>intelligent systems.</em></h1>
+        <p>A transparent engineering research journal exploring chemical process modelling, industrial Digital Twins, experimental validation and emerging technologies—with the calculations, mistakes and lessons along the way.</p>
+        <div class="actions"><a class="btn btn-primary" href="#portfolio">Explore the project roadmap</a><a class="btn btn-secondary" href="#journal">Read the research journal</a></div>
+      </div>
+      <div class="hero-diagram" aria-label="Illustrative digital twin model pipeline">
+        <div class="diagram-kicker">The research approach</div>
+        <div class="diagram-title">Physics → Data → Prediction → Evidence</div>
+        <svg viewBox="0 0 440 245" role="img" aria-label="Illustrative process measurement flowing into a digital model and validated insight" style="display:block;width:100%;height:auto">
+          <rect x="11" y="33" width="118" height="75" rx="11" fill="#204f5c" stroke="#6ba7a7"/>
+          <text x="70" y="65" fill="#e1f7f1" text-anchor="middle" font-size="12" font-weight="700">Physical process</text>
+          <text x="70" y="85" fill="#aed0d1" text-anchor="middle" font-size="10">Sensors · Plant</text>
+          <rect x="165" y="33" width="118" height="75" rx="11" fill="#1b6267" stroke="#6ba7a7"/>
+          <text x="224" y="65" fill="#e8f9f4" text-anchor="middle" font-size="12" font-weight="700">Process model</text>
+          <text x="224" y="85" fill="#c1dedb" text-anchor="middle" font-size="10">Physics · Data</text>
+          <rect x="319" y="33" width="111" height="75" rx="11" fill="#204f5c" stroke="#6ba7a7"/>
+          <text x="374" y="65" fill="#e1f7f1" text-anchor="middle" font-size="12" font-weight="700">Predictions</text>
+          <text x="374" y="85" fill="#aed0d1" text-anchor="middle" font-size="10">Insights · Tests</text>
+          <path d="M133 70H159 M153 65L159 70L153 75 M287 70H313 M307 65L313 70L307 75" stroke="#a6e6d7" stroke-width="2" fill="none"/>
+          <path d="M15 199H423" stroke="#688c97" stroke-width="1"/>
+          <path d="M17 185 Q65 181 108 173T195 137T280 145T363 125T423 124" stroke="#86e3d2" stroke-width="3" fill="none"/>
+          <path d="M17 186 Q65 186 108 166T195 155T280 132T363 130T423 116" stroke="#d7af6d" stroke-width="2" fill="none" stroke-dasharray="5 5"/>
+          <circle cx="195" cy="137" r="4" fill="#86e3d2"/><circle cx="280" cy="132" r="4" fill="#d7af6d"/>
+          <text x="17" y="225" fill="#c7dddd" font-size="10">Illustration: measured behavior vs model prediction</text>
+        </svg>
+        <div class="diagram-foot">An engineering-first approach: document assumptions, test predictions, investigate discrepancies.</div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-head"><span class="section-label">01 / About</span><h2>Engineering judgement grounded in science.</h2><p>My background is in chemical engineering, industrial process engineering, research and teaching. This website documents my journey toward developing practical, scientifically defensible Digital Twin systems.</p></div>
+        <div class="about-grid">
+          <div class="panel"><p>I hold a Ph.D. in Chemical Engineering and have worked on problems related to water and wastewater treatment, process evaluation, chemical systems and computational modelling.</p><p>My present research direction is to bring together first-principles models, industrial measurements, simulation, sensors and computational methods to improve process monitoring and decision-making.</p><p>Rather than showing only polished results, this journal will record the technical questions, alternative approaches, simulation errors, experiments, corrections and evidence that shape each project.</p></div>
+          <aside class="panel snapshot"><strong>Core areas of interest</strong><ul><li>Industrial water & wastewater systems</li><li>Chemical reaction & process modelling</li><li>Electrochemical devices & multiphysics</li><li>Indoor air quality & energy</li><li>Data-driven and hybrid Digital Twins</li></ul></aside>
+        </div>
+      </div>
+    </section>
+    <section class="stripe" id="research">
+      <div class="container">
+        <div class="section-head"><span class="section-label">02 / Research themes</span><h2>Questions worth investigating.</h2><p>Interdisciplinary engineering topics linking physics, computation, experimentation and industrial application.</p></div>
+        <div class="theme-grid">
+          <div class="theme"><strong>First-principles process modelling</strong><span>Mass and energy balances, dynamics, reaction kinetics, transport.</span></div>
+          <div class="theme"><strong>Industrial Digital Twins</strong><span>Telemetry, state estimation, fault diagnosis and validation.</span></div>
+          <div class="theme"><strong>Multiphysics & electrochemistry</strong><span>Current distribution, heat transfer, flow and device behaviour.</span></div>
+          <div class="theme"><strong>AI for engineering</strong><span>Soft sensors, hybrid modelling, uncertainty and optimization.</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head"><span class="section-label">03 / Portfolio roadmap</span><h2>Six application-focused capstones.</h2><p>The projects below are planned research and development demonstrations. Their status will be updated as simulation, prototype and validation milestones are completed.</p></div>
+        <div class="cards">
+          <article class="card"><span class="pill gray">Planned · 01</span><h3>Smart Pumping & Hydraulics</h3><p>Pump curves, pipeline losses, level prediction and equipment fault scenarios.</p></article>
+          <article class="card"><span class="pill gray">Planned · 02</span><h3>Chemical Treatment Process</h3><p>Neutralization, dosing, precipitation, flocculation and clarification.</p></article>
+          <article class="card"><span class="pill gray">Planned · 03</span><h3>Wastewater Biological Treatment</h3><p>Bioreactor dynamics, oxygen demand, effluent prediction and fouling indicators.</p></article>
+          <article class="card"><span class="pill gray">Planned · 04</span><h3>IAQ & HVAC Optimization</h3><p>Indoor pollutant dynamics, ventilation and energy trade-offs.</p></article>
+          <article class="card"><span class="pill gray">Planned · 05</span><h3>Electrochemical HOCl Device</h3><p>Electrochemistry, performance prediction and monitored prototyping.</p></article>
+          <article class="card"><span class="pill gray">Planned · 06</span><h3>Anaerobic Digestion & BioCNG</h3><p>Organic loading, biogas forecasting and stability assessment.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="stripe" id="journal">
+      <div class="container">
+        <div class="section-head"><span class="section-label">04 / Research journal</span><h2>The process behind the results.</h2><p>Each entry will separate hypotheses, calculations, model predictions, experimental evidence and unresolved questions.</p></div>
+        <div class="journal-grid">
+          <div class="panel">
+            <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>Why does a pump operate where its curves intersect?</h3><p>Initial calculations, assumptions, Python modelling and independent verification.</p></div>
+            <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>When should a process model become a Digital Twin?</h3><p>Simulation vs live data, calibration, validation and system architecture.</p></div>
+            <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>What should we document when a simulation fails?</h3><p>Failure logs, debugging evidence and defensible conclusions.</p></div>
+          </div>
+          <div class="note"><h3 style="color:white">A simple research method</h3><p>Every project begins with a question and concludes with an evidence-based engineering assessment.</p><ol><li>Define the question</li><li>State assumptions and hypotheses</li><li>Build and test the model</li><li>Investigate discrepancies</li><li>Record limits and next experiments</li></ol></div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="container contact-box"><div><span class="section-label">05 / Contact & collaboration</span><h2>Engineering problems are better solved together.</h2><p>Interested in industrial modelling, Digital Twins, process research or academic collaboration? Contact information and professional links will be added as this portfolio develops.</p></div></div>
+    </section>
+  </main>
+  <footer><div class="container"><span>© Engineering Research Journal · Research & portfolio</span><span>Designed for open, evidence-based engineering work</span></div></footer>
+</body>
+</html>
