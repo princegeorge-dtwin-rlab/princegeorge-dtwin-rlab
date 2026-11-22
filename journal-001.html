@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research Journal 001: beginning a first-principles approach to industrial digital twin development.">
+  <title>Research Journal 001 | Engineering Research Journal</title>
+  <style>
+    :root { --navy:#102537; --navy2:#184454; --teal:#13746d; --mint:#a1e2d4; --ink:#19313e; --muted:#526c79; --bg:#f5f8f7; --line:#dbe6e4; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:var(--ink); background:var(--bg); }
+    a { color:#116960; }
+    a:focus-visible { outline:3px solid #d6a44b; outline-offset:3px; }
+    .container { max-width:950px; margin:auto; padding:0 24px; }
+    .site-header { background:var(--navy); color:#fff; border-bottom:1px solid #ffffff22; }
+    .header-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding:19px 24px; }
+    .brand { font-weight:750; color:white; text-decoration:none; line-height:1.2; }
+    .brand span { display:block; color:#a1e2d4; font-size:.72rem; text-transform:uppercase; letter-spacing:1.15px; margin-top:5px; }
+    nav { display:flex; flex-wrap:wrap; gap:20px; }
+    nav a { color:#d2e9e7; text-decoration:none; font-size:.92rem; }
+    nav a:hover { color:white; text-decoration:underline; }
+    .article-hero { padding:66px 0 62px; background:radial-gradient(circle at 90% 10%,#1b5961,transparent 38%),linear-gradient(125deg,var(--navy),var(--navy2)); color:white; }
+    .label { display:inline-block; font-size:.75rem; text-transform:uppercase; letter-spacing:1.8px; font-weight:750; color:var(--mint); }
+    h1 { font-size:clamp(2.2rem,5vw,3.65rem); line-height:1.13; letter-spacing:-1.35px; margin:14px 0 20px; max-width:800px; }
+    .subtitle { font-size:1.12rem; color:#dbebeb; max-width:720px; margin:0 0 22px; }
+    .meta { font-size:.86rem; color:#b2d4d1; }
+    main { padding:44px 0 70px; }
+    article { background:white; border:1px solid var(--line); padding:clamp(24px,5vw,56px); border-radius:16px; box-shadow:0 7px 25px #1025370b; }
+    article > p:first-child { font-size:1.13rem; color:#314c59; }
+    h2 { margin:37px 0 13px; line-height:1.25; font-size:1.45rem; color:#173b48; }
+    p { margin:0 0 19px; }
+    ul,ol { padding-left:24px; }
+    li { margin:8px 0; }
+    .callout { border-left:4px solid #268d81; background:#e9f6f1; padding:18px 21px; border-radius:0 10px 10px 0; margin:26px 0; }
+    .callout p { margin-bottom:0; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:22px 0; }
+    .card { border:1px solid var(--line); border-radius:11px; padding:18px; background:#f9fcfb; }
+    .card strong { display:block; margin-bottom:5px; }
+    .card span { color:var(--muted); font-size:.92rem; }
+    .status { color:#5d6873; background:#eef2f3; border-radius:999px; padding:4px 10px; font-size:.79rem; font-weight:700; white-space:nowrap; }
+    .footnote { color:var(--muted); font-size:.9rem; border-top:1px solid var(--line); padding-top:22px; margin-top:35px; }
+    .next { margin:25px 0 0; padding:21px 25px; border-radius:13px; background:#102537; color:white; }
+    .next a { color:#a8e5da; }
+    .back { display:inline-block; padding:10px 0; text-decoration:none; font-weight:700; }
+    footer { background:var(--navy); color:#bfd3d7; text-align:center; padding:28px 18px; font-size:.85rem; }
+    @media(max-width:620px) { .grid{grid-template-columns:1fr;} .header-inner{align-items:flex-start;} .article-hero{padding:52px 0;} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Engineering Research Journal<span>Digital Twin & Computational Engineering</span></a>
+      <nav aria-label="Site navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#journal">Journal</a>
+      </nav>
+    </div>
+  </header>
+  <div class="article-hero">
+    <div class="container">
+      <span class="label">Research Journal · Entry 001</span>
+      <h1>Why I Am Building Digital Twins from First Principles</h1>
+      <p class="subtitle">Starting a transparent engineering journey: defining the questions, the methods, and the evidence I will need before I can claim that a model works.</p>
+      <div class="meta">22 November 2026 · Research direction · <span class="status">Programme initiated — results pending</span></div>
+    </div>
+  </div>
+  <main class="container">
+    <a class="back" href="index.html#journal">← Back to research journal</a>
+    <article>
+      <p>My work in chemical and environmental engineering has repeatedly brought me back to one question: how can we make better decisions about a physical process when measurements are limited, conditions are changing, and the original design assumptions no longer fully describe the plant?</p>
+      <p>Digital Twin technology offers a promising direction, but I do not want to begin with an attractive dashboard and then search for a model to justify it. I want to begin with the process itself—its physics, chemistry, uncertainty and operational constraints.</p>
+
+      <h2>What I bring to this investigation</h2>
+      <p>My background includes a Ph.D. in Chemical Engineering and professional experience in process engineering, water and wastewater treatment, computational modelling, research and teaching. These areas provide the engineering foundation for the programme, but a functioning digital twin requires additional competence in real-time data integration, software engineering, model calibration and operational validation.</p>
+
+      <h2>The questions I want to answer</h2>
+      <ul>
+        <li>What level of model complexity is justified by the available measurements?</li>
+        <li>How can first-principles models and data-driven methods complement each other without concealing model limitations?</li>
+        <li>How can a system distinguish physical process faults from faulty sensors or inaccurate assumptions?</li>
+        <li>What validation evidence is necessary before giving operational recommendations?</li>
+        <li>Can a reusable digital twin architecture work across mechanical, chemical, biological and electrochemical systems?</li>
+      </ul>
+
+      <div class="callout"><strong>My working principle</strong><p>A simulation is not automatically a digital twin. I will label synthetic data as synthetic, report unsuccessful tests, and avoid claiming that a prototype or model is industrially validated until there is suitable evidence.</p></div>
+
+      <h2>The project-based research programme</h2>
+      <p>I am organizing the work into twenty-four focused minor projects and eight integrated capstone applications. The initial focus is on engineering modelling and connectivity; later work will address biological systems, IAQ and HVAC, electrochemical devices, and anaerobic digestion.</p>
+      <div class="grid">
+        <div class="card"><strong>01 · Hydraulic systems</strong><span>Pump curves, piping losses, tank dynamics, telemetry and fault scenarios.</span></div>
+        <div class="card"><strong>02 · Chemical treatment</strong><span>Neutralization, precipitation, chemical dosing and clarification.</span></div>
+        <div class="card"><strong>03 · Biological treatment</strong><span>Bioreactor dynamics, oxygen utilization, prediction and validation.</span></div>
+        <div class="card"><strong>04 · Indoor air quality</strong><span>Pollutant dynamics, ventilation, thermal behavior and energy.</span></div>
+        <div class="card"><strong>05 · Electrochemical systems</strong><span>Multiphysics, product prediction and instrumented prototyping.</span></div>
+        <div class="card"><strong>06 · Anaerobic digestion</strong><span>Organic loading, process stability, biogas and energy recovery.</span></div>
+        <div class="card"><strong>07 · Advanced water treatment</strong><span>Filtration, membrane performance, raw-water variability, recovery and energy.</span></div>
+        <div class="card"><strong>08 · Flue-gas CO₂ capture</strong><span>Solvent absorption/regeneration and cyclic solid-sorbent adsorption, benchmarked using common flue-gas conditions.</span></div>
+      </div>
+
+      <h2>The first experiment: a centrifugal pump and piping network</h2>
+      <p>My first minor project will investigate the intersection of a pump characteristic curve with a system head curve. It is deliberately modest: before connecting real-time data or predictive algorithms, I need to demonstrate that the calculated operating point is physically meaningful.</p>
+      <ol>
+        <li>State the operating conditions and units; identify missing input information.</li>
+        <li>Derive the pump and system relationships and solve for the operating point.</li>
+        <li>Implement the equations in Python and check the numerical solution independently.</li>
+        <li>Apply sensitivity tests for changing pipe resistance and operating conditions.</li>
+        <li>Record mistakes, questionable assumptions, corrected calculations and remaining uncertainty.</li>
+        <li>Connect the verified model to simulated telemetry before considering real sensors.</li>
+      </ol>
+      <p>No pump simulation results are presented in this first entry. They belong in the next journal article after the calculations and tests have actually been performed.</p>
+
+      <h2>How I will document failures</h2>
+      <p>For each unexpected result, I intend to record the observed symptom, the initial explanation, competing hypotheses, the tests performed, and what the evidence supports. A converged numerical solution is not necessarily a correct engineering solution. Equally, a model that fails may reveal a mistaken boundary condition, an unsuitable assumption or an inadequately observed process.</p>
+
+      <h2>What readers should expect</h2>
+      <p>This journal will combine engineering derivations, code, experimental planning, validation plots, design decisions and critical reviews of emerging technologies. Completed results will be separated from planned work. Proprietary plant data, client information and potentially protectable inventions will not be published without appropriate permission and review.</p>
+
+      <div class="next"><strong>Next planned entry</strong><p>Research Journal 002 — Where a centrifugal pump actually operates: building and checking the first hydraulic model.</p><a href="index.html#portfolio">Explore the project roadmap</a></div>
+      <p class="footnote">Publication note: This entry describes the objectives and methodology of a research programme. It is not a report of completed digital twin experiments or validated industrial deployments.</p>
+    </article>
+  </main>
+  <footer>Engineering Research Journal · Document the question. Test the model. Report the evidence.</footer>
+</body>
+</html>

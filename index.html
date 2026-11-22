@@ -33,11 +33,21 @@
     h3{font-size:1.2rem;line-height:1.35;margin:2px 0;color:#193340}.card p{color:#59717b;margin:0;flex:1;font-size:.93rem}
     .small-link{text-decoration:none;color:var(--teal);font-size:.87rem;font-weight:750;align-self:start}.small-link:hover{text-decoration:underline}
     .theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.theme{border-left:4px solid #348a7e;padding:10px 22px;background:white;border-radius:0 9px 9px 0}.theme strong{display:block}.theme span{color:var(--muted);font-size:.89rem}
+    .summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.summary-item{border:1px solid rgba(215,240,239,.27);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.05)}.summary-item strong{display:block;font-size:1.65rem;color:#b9e8d9;line-height:1.25}.summary-item span{font-size:.76rem;color:#d4e6eb;letter-spacing:.2px}
+    .subtle{font-size:.87rem;color:var(--muted)}
+    .track-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+    .track{border:1px solid var(--line);background:#fff;border-radius:13px;overflow:hidden;box-shadow:0 5px 20px rgba(16,37,55,.025)}
+    .track summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px;color:#193340;font-weight:720}
+    .track summary::-webkit-details-marker{display:none}.track summary::after{content:'+';font-size:1.45rem;color:var(--teal);line-height:1}.track[open] summary::after{content:'−'}
+    .track summary:hover,.track summary:focus-visible{background:#f1f9f7}
+    .track-title{display:block}.track-title small{display:block;color:var(--muted);font-size:.75rem;font-weight:500;margin-top:2px}
+    .track-content{padding:0 20px 20px}.minor{padding:13px 0;border-top:1px solid var(--line)}.minor strong{display:block;font-size:.9rem}.minor p{font-size:.83rem;margin:3px 0 0;color:var(--muted)}
+    .method-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:23px}.method-row span{background:#e7f3f0;color:#225e5b;font-size:.78rem;padding:7px 12px;border-radius:7px;font-weight:650}
     .journal-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.journal-entry{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}.journal-entry:last-child{border:none;margin-bottom:0;padding-bottom:0}.journal-entry h3{margin:6px 0}.journal-entry p{margin:3px 0;color:var(--muted);font-size:.9rem}.note{border-radius:14px;background:var(--navy);color:white;padding:29px}.note p{color:#cfe2e4}.note ol{padding-left:21px;line-height:2;color:#e2f0f0}
     .contact{background:#e2efec;border-top:1px solid #c9e0db}.contact-box{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}.contact-box p{color:#536f77;max-width:650px}
     footer{background:var(--navy);color:#b8cdd2;padding:29px 0;font-size:.85rem} footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){.hero-grid,.about-grid,.journal-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.hero{padding:62px 0}.hero-diagram{max-width:550px}h1{letter-spacing:-1px}}
-    @media(max-width:550px){.container{padding:0 19px}.cards,.theme-grid{grid-template-columns:1fr}.nav{justify-content:center;text-align:center}nav{justify-content:center;gap:10px 17px}.hero{padding:52px 0 60px}main section{padding:55px 0}h1{font-size:2.35rem}}
+    @media(max-width:800px){.hero-grid,.about-grid,.journal-grid,.track-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.hero{padding:62px 0}.hero-diagram{max-width:550px}h1{letter-spacing:-1px}}
+    @media(max-width:550px){.summary-strip{grid-template-columns:1fr}.container{padding:0 19px}.cards,.theme-grid{grid-template-columns:1fr}.nav{justify-content:center;text-align:center}nav{justify-content:center;gap:10px 17px}.hero{padding:52px 0 60px}main section{padding:55px 0}h1{font-size:2.35rem}}
   </style>
 </head>
 <body>
@@ -46,7 +56,7 @@
     <div class="container nav">
       <a class="brand" href="#home">Engineering Research Journal<span>Digital Twin & Computational Engineering</span></a>
       <nav aria-label="Main menu">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#portfolio">Portfolio</a><a href="#journal">Journal</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#portfolio">Capstones</a><a href="#minor-projects">Minor projects</a><a href="#journal">Journal</a><a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -56,7 +66,8 @@
         <div class="eyebrow">Research in progress · Engineering in practice</div>
         <h1>From physical processes to <em>intelligent systems.</em></h1>
         <p>A transparent engineering research journal exploring chemical process modelling, industrial Digital Twins, experimental validation and emerging technologies—with the calculations, mistakes and lessons along the way.</p>
-        <div class="actions"><a class="btn btn-primary" href="#portfolio">Explore the project roadmap</a><a class="btn btn-secondary" href="#journal">Read the research journal</a></div>
+        <div class="actions"><a class="btn btn-primary" href="#portfolio">Explore the capstones</a><a class="btn btn-secondary" href="#journal">Read the research journal</a></div>
+        <div class="summary-strip" aria-label="Planned research programme at a glance"><div class="summary-item"><strong>08</strong><span>Planned capstones</span></div><div class="summary-item"><strong>24</strong><span>Supporting minor projects</span></div><div class="summary-item"><strong>41</strong><span>Planned research articles</span></div></div>
       </div>
       <div class="hero-diagram" aria-label="Illustrative digital twin model pipeline">
         <div class="diagram-kicker">The research approach</div>
@@ -85,11 +96,10 @@
   <main>
     <section id="about">
       <div class="container">
-        <div class="section-head"><span class="section-label">01 / About</span><h2>Engineering judgement grounded in science.</h2><p>I am a Chemical Engineer with a Ph.D. and experience in industrial process engineering, environmental technologies, computational modelling, research and teaching. My professional interests include chemical process design, wastewater treatment, multiphysics simulation, and the development of intelligent industrial systems.
-This research journal documents my exploration of Digital Twin technologies, combining first-principles mathematical modelling, experimental investigations, computational simulations and data-driven methods. I intend to share not only successful outcomes but also the challenges, unsuccessful approaches and engineering reasoning involved in developing practical solutions.</p></div>
+        <div class="section-head"><span class="section-label">01 / About</span><h2>Engineering judgement grounded in science.</h2><p>I am a Chemical Engineer with a Ph.D. and experience in industrial process engineering, environmental technologies, computational modelling, research and teaching. My professional interests include chemical process design, wastewater treatment, multiphysics simulation, and the development of intelligent industrial systems.</p><p>This research journal documents my exploration of Digital Twin technologies, combining first-principles mathematical modelling, experimental investigations, computational simulations and data-driven methods. I intend to share not only successful outcomes but also the challenges, unsuccessful approaches and engineering reasoning involved in developing practical solutions.</p></div>
         <div class="about-grid">
-          <div class="panel"><p>I am a Chemical Engineer with a Ph.D. and experience in industrial process engineering, research, and teaching. My interests include process modelling, multiphysics simulation, environmental technologies, and the development of intelligent industrial systems.Through this research journal, I document my journey in Digital Twin development, including mathematical modelling, computational simulations, experimental investigations, unsuccessful attempts, troubleshooting, and lessons learned.My objective is to bridge fundamental engineering principles with emerging technologies and develop practical solutions for industrial applications.</p><p>My present research direction is to bring together first-principles models, industrial measurements, simulation, sensors and computational methods to improve process monitoring and decision-making.</p><p>Rather than showing only polished results, this journal will record the technical questions, alternative approaches, simulation errors, experiments, corrections and evidence that shape each project.</p></div>
-          <aside class="panel snapshot"><strong>Core areas of interest</strong><ul><li>Industrial water & wastewater systems</li><li>Chemical reaction & process modelling</li><li>Electrochemical devices & multiphysics</li><li>Indoor air quality & energy</li><li>Data-driven and hybrid Digital Twins</li></ul></aside>
+          <div class="panel"><p>My work spans industrial water and wastewater processes, chemical engineering design and process assessment, research and teaching. I am extending this foundation into dynamic modelling, industrial sensing, hybrid simulation and evidence-based operational decision support.</p><p>I am organizing the work as a transparent research programme with eight planned capstone demonstrations and twenty-four supporting minor projects. Each project will distinguish planned research, calculated results, prototype observations and independently validated findings.</p><p>Unsuccessful approaches and corrections are part of the record: the goal is to explain how engineering conclusions were reached—not simply to show polished outcomes.</p></div>
+          <aside class="panel snapshot"><strong>Core areas of interest</strong><ul><li>Water & wastewater treatment</li><li>CO₂ absorption, adsorption & carbon management</li><li>Chemical reaction & process modelling</li><li>Electrochemical devices & multiphysics</li><li>Indoor air quality & energy</li><li>Data-driven and hybrid Digital Twins</li></ul></aside>
         </div>
       </div>
     </section>
@@ -101,27 +111,83 @@ This research journal documents my exploration of Digital Twin technologies, com
           <div class="theme"><strong>Industrial Digital Twins</strong><span>Telemetry, state estimation, fault diagnosis and validation.</span></div>
           <div class="theme"><strong>Multiphysics & electrochemistry</strong><span>Current distribution, heat transfer, flow and device behaviour.</span></div>
           <div class="theme"><strong>AI for engineering</strong><span>Soft sensors, hybrid modelling, uncertainty and optimization.</span></div>
+          <div class="theme"><strong>Advanced water treatment</strong><span>Coagulation, filtration, membranes, water quality and energy performance.</span></div>
+          <div class="theme"><strong>CO₂ capture: absorption &amp; adsorption</strong><span>Gas–liquid absorption and solvent regeneration; gas–solid adsorption, breakthrough and cyclic regeneration.</span></div>
         </div>
       </div>
     </section>
     <section id="portfolio">
       <div class="container">
-        <div class="section-head"><span class="section-label">03 / Portfolio roadmap</span><h2>Six application-focused capstones.</h2><p>The projects below are planned research and development demonstrations. Their status will be updated as simulation, prototype and validation milestones are completed.</p></div>
+        <div class="section-head"><span class="section-label">03 / Portfolio roadmap</span><h2>Eight application-focused capstones.</h2><p>Twenty-four minor projects will support the eight capstones. All capstones below are planned research and development demonstrations. A project is only marked verified or validated after documented checks with appropriate evidence.</p></div>
         <div class="cards">
-          <article class="card"><span class="pill gray">Planned · 01</span><h3>Smart Pumping & Hydraulics</h3><p>Pump curves, pipeline losses, level prediction and equipment fault scenarios.</p></article>
-          <article class="card"><span class="pill gray">Planned · 02</span><h3>Chemical Treatment Process</h3><p>Neutralization, dosing, precipitation, flocculation and clarification.</p></article>
-          <article class="card"><span class="pill gray">Planned · 03</span><h3>Wastewater Biological Treatment</h3><p>Bioreactor dynamics, oxygen demand, effluent prediction and fouling indicators.</p></article>
-          <article class="card"><span class="pill gray">Planned · 04</span><h3>IAQ & HVAC Optimization</h3><p>Indoor pollutant dynamics, ventilation and energy trade-offs.</p></article>
-          <article class="card"><span class="pill gray">Planned · 05</span><h3>Electrochemical HOCl Device</h3><p>Electrochemistry, performance prediction and monitored prototyping.</p></article>
-          <article class="card"><span class="pill gray">Planned · 06</span><h3>Anaerobic Digestion & BioCNG</h3><p>Organic loading, biogas forecasting and stability assessment.</p></article>
+          <article class="card"><span class="pill gray">Planned · 01</span><h3>Smart Pumping & Hydraulics</h3><p>Pump curves, pipeline losses, level prediction and equipment fault scenarios.</p><a class="small-link" href="#minors-c01">Supporting projects M01–M03 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 02</span><h3>Chemical Treatment Process</h3><p>Neutralization, dosing, precipitation, flocculation and clarification.</p><a class="small-link" href="#minors-c02">Supporting projects M04–M06 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 03</span><h3>Wastewater Biological Treatment</h3><p>Bioreactor dynamics, oxygen demand, effluent prediction and fouling indicators.</p><a class="small-link" href="#minors-c03">Supporting projects M07–M09 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 04</span><h3>IAQ & HVAC Optimization</h3><p>Indoor pollutant dynamics, ventilation and energy trade-offs.</p><a class="small-link" href="#minors-c04">Supporting projects M10–M12 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 05</span><h3>Electrochemical HOCl Device</h3><p>Electrochemistry, performance prediction and monitored prototyping.</p><a class="small-link" href="#minors-c05">Supporting projects M13–M15 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 06</span><h3>Anaerobic Digestion & BioCNG</h3><p>Organic loading, biogas forecasting and stability assessment.</p><a class="small-link" href="#minors-c06">Supporting projects M16–M18 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 07</span><h3>Advanced Water Treatment Digital Twin</h3><p>Coagulation and filtration, UF/RO membrane performance, water quality, recovery and energy optimization.</p><a class="small-link" href="capstone-07-water-treatment.html">Explore planned research →</a><a class="small-link" href="#minors-c07">Supporting projects M19–M21 →</a></article>
+          <article class="card"><span class="pill gray">Planned · 08</span><h3>Flue-Gas CO₂ Capture: Absorption + Adsorption</h3><p>Two equally important capture routes: liquid-solvent absorption/regeneration and solid-sorbent adsorption with PSA/TSA/TVSA cycles; compare capture, purity and energy on a common basis.</p><a class="small-link" href="capstone-08-co2-capture.html">Explore planned research →</a><a class="small-link" href="#minors-c08">Supporting projects M22–M24 →</a></article>
         </div>
+      </div>
+    </section>
+
+    <section class="stripe" id="minor-projects">
+      <div class="container">
+        <div class="section-head"><span class="section-label">04 / Skill-building research</span><h2>24 minor projects. Eight integrated research tracks.</h2><p>Each group develops three technical building blocks for its capstone. Select a track to view its projects. Every item is a planned investigation—not a claim of completed experimental work.</p></div>
+        <div class="track-grid">
+          <details class="track" id="minors-c01"><summary><span class="track-title">C01 · Smart Pumping & Hydraulic Networks<small>M01–M03 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M01 · Pump curves and pipeline resistance</strong><p>Solve the physical operating point using pump and system head curves.</p></div>
+            <div class="minor"><strong>M02 · Tank level dynamics</strong><p>Solve transient storage balances, overflow and variable inflow.</p></div>
+            <div class="minor"><strong>M03 · IoT data integration</strong><p>Publish time-stamped sensor data to a real-time dashboard.</p></div>
+          </div></details>
+          <details class="track" id="minors-c02"><summary><span class="track-title">C02 · Chemical Neutralization & Clarification<small>M04–M06 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M04 · Acid–base neutralization</strong><p>Develop a nonlinear chemistry model and reagent balance.</p></div>
+            <div class="minor"><strong>M05 · Iron precipitation & settling</strong><p>Estimate precipitate formation and clarifier response with evidence-based correlations.</p></div>
+            <div class="minor"><strong>M06 · Dosing optimization</strong><p>Test pH control, measurement delays and constrained dosing strategies.</p></div>
+          </div></details>
+          <details class="track" id="minors-c03"><summary><span class="track-title">C03 · Wastewater Biological Treatment<small>M07–M09 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M07 · Biological reaction kinetics</strong><p>Model substrate conversion, biomass growth and oxygen uptake.</p></div>
+            <div class="minor"><strong>M08 · Hydraulic and solids loading</strong><p>Simulate clarifier disturbances and short-term hydraulic shocks.</p></div>
+            <div class="minor"><strong>M09 · Soft sensors & membrane diagnostics</strong><p>Explore BOD/COD estimation and fouling prediction with validated data.</p></div>
+          </div></details>
+          <details class="track" id="minors-c04"><summary><span class="track-title">C04 · IAQ & HVAC Energy Optimization<small>M10–M12 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M10 · Indoor CO₂ mass balance</strong><p>Model occupancy, ventilation and transient CO₂ concentrations.</p></div>
+            <div class="minor"><strong>M11 · Thermal & particulate dynamics</strong><p>Estimate temperature, humidity and particulate response with imperfect data.</p></div>
+            <div class="minor"><strong>M12 · Energy and ventilation optimization</strong><p>Evaluate IAQ constraints against estimated HVAC energy requirements.</p></div>
+          </div></details>
+          <details class="track" id="minors-c05"><summary><span class="track-title">C05 · Electrochemical HOCl Generator<small>M13–M15 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M13 · Electrochemical production model</strong><p>Estimate available chlorine, speciation, efficiency and electricity demand.</p></div>
+            <div class="minor"><strong>M14 · COMSOL multiphysics study</strong><p>Couple current distribution, fluid flow and heat transport.</p></div>
+            <div class="minor"><strong>M15 · Fault diagnostics & output prediction</strong><p>Assess electrochemical output predictions and abnormal operating signals.</p></div>
+          </div></details>
+          <details class="track" id="minors-c06"><summary><span class="track-title">C06 · Anaerobic Digestion & BioCNG<small>M16–M18 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M16 · COD & methane mass balances</strong><p>Develop stoichiometric methane potential and process material balances.</p></div>
+            <div class="minor"><strong>M17 · Digestion kinetics and inhibition</strong><p>Simulate nonlinear biological response to loading disturbances.</p></div>
+            <div class="minor"><strong>M18 · Energy recovery optimization</strong><p>Assess gas use, energy balances and feed constraints.</p></div>
+          </div></details>
+          <details class="track" id="minors-c07"><summary><span class="track-title">C07 · Advanced Water Treatment & Reuse<small>M19–M21 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M19 · Filtration and fouling dynamics</strong><p>Predict media-filter head loss, breakthrough and cleaning/backwash triggers.</p></div>
+            <div class="minor"><strong>M20 · UF/RO membrane performance</strong><p>Evaluate flux, rejection, recovery, fouling and energy consumption.</p></div>
+            <div class="minor"><strong>M21 · Water-quality & energy optimization</strong><p>Balance water recovery, product quality, chemical use and membrane health.</p></div>
+            <a class="small-link" href="capstone-07-water-treatment.html">View full capstone research plan →</a>
+          </div></details>
+          <details class="track" id="minors-c08"><summary><span class="track-title">C08 · CO₂ Capture: Absorption &amp; Adsorption<small>M22–M24 · Three minor projects</small></span></summary><div class="track-content">
+            <div class="minor"><strong>M22 · Shared flue-gas design basis</strong><p>Characterize gas flow, CO₂ partial pressure, impurities, moisture, pretreatment and common mass/energy boundaries.</p></div>
+            <div class="minor"><strong>M23 · Solvent absorption & regeneration</strong><p>Model gas–liquid transfer, rich/lean loading, stripper dynamics, heat recovery and solvent degradation indicators.</p></div>
+            <div class="minor"><strong>M24 · Sorbent adsorption & cyclic regeneration</strong><p>Model isotherms, packed-bed breakthrough, pressure drop, heat effects and PSA/TSA/TVSA cycles. Compare both routes during capstone integration.</p></div>
+            <a class="small-link" href="capstone-08-co2-capture.html">View full capstone research plan →</a>
+          </div></details>
+        </div>
+        <div class="method-row" aria-label="Required work for each project"><span>Research question</span><span>Model equations</span><span>Code / simulation</span><span>Verification</span><span>Failure log</span><span>Research note</span></div>
       </div>
     </section>
     <section class="stripe" id="journal">
       <div class="container">
-        <div class="section-head"><span class="section-label">04 / Research journal</span><h2>The process behind the results.</h2><p>Each entry will separate hypotheses, calculations, model predictions, experimental evidence and unresolved questions.</p></div>
+        <div class="section-head"><span class="section-label">05 / Research journal</span><h2>The process behind the results.</h2><p>Each entry will separate hypotheses, calculations, model predictions, experimental evidence and unresolved questions.</p></div>
         <div class="journal-grid">
           <div class="panel">
+            <div class="journal-entry"><span class="pill">Research charter · Planned programme</span><h3>Why I Am Building Digital Twins from First Principles</h3><p>A research charter: objectives, uncertainties, reproducibility and the planned eight-capstone programme.</p><a class="small-link" href="journal-001.html">Read Research Journal 001 →</a></div>
             <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>Why does a pump operate where its curves intersect?</h3><p>Initial calculations, assumptions, Python modelling and independent verification.</p></div>
             <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>When should a process model become a Digital Twin?</h3><p>Simulation vs live data, calibration, validation and system architecture.</p></div>
             <div class="journal-entry"><span class="pill gray">Upcoming entry</span><h3>What should we document when a simulation fails?</h3><p>Failure logs, debugging evidence and defensible conclusions.</p></div>
@@ -131,7 +197,7 @@ This research journal documents my exploration of Digital Twin technologies, com
       </div>
     </section>
     <section class="contact" id="contact">
-      <div class="container contact-box"><div><span class="section-label">05 / Contact & collaboration</span><h2>Engineering problems are better solved together.</h2><p>Interested in industrial modelling, Digital Twins, process research or academic collaboration? Contact information and professional links will be added as this portfolio develops.</p></div></div>
+      <div class="container contact-box"><div><span class="section-label">06 / Contact & collaboration</span><h2>Engineering problems are better solved together.</h2><p>Interested in industrial modelling, Digital Twins, process research or academic collaboration? Contact information and professional links will be added as this portfolio develops.</p></div></div>
     </section>
   </main>
   <footer><div class="container"><span>© Engineering Research Journal · Research & portfolio</span><span>Designed for open, evidence-based engineering work</span></div></footer>
